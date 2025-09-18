@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Conult Health Analytics Design System 
+Healthcare-focused, professional, kinetic yet calm
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors (HSL) */
+    --background: 217 100% 97%;
+    --foreground: 226 71% 14%;
+    
+    /* Brand Palette */
+    --navy: 226 71% 14%;          /* #0B1742 */
+    --navy-light: 226 60% 20%;
+    --emerald: 168 83% 31%;       /* #0E8F69 */
+    --emerald-light: 168 70% 45%;
+    --slate: 215 16% 47%;         /* #64748B */
+    --slate-light: 215 16% 65%;
+    --off-white: 217 100% 97%;    /* #F8FAFC */
+    
+    /* Semantic Colors */
+    --primary: 168 83% 31%;
+    --primary-foreground: 217 100% 97%;
+    --primary-glow: 168 70% 45%;
+    
+    --secondary: 226 71% 14%;
+    --secondary-foreground: 217 100% 97%;
+    
+    --accent: 215 16% 47%;
+    --accent-foreground: 217 100% 97%;
+    
+    --muted: 217 32% 93%;
+    --muted-foreground: 215 16% 47%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 226 71% 14%;
+    
+    --border: 217 32% 91%;
+    --input: 217 32% 91%;
+    --ring: 168 83% 31%;
+    
+    /* Interactive States */
+    --hover-emerald: 168 70% 35%;
+    --active-emerald: 168 85% 28%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--emerald-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--off-white)) 0%, hsl(217 50% 95%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.3) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--navy) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--navy) / 0.1), 0 2px 4px -1px hsl(var(--navy) / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--navy) / 0.1), 0 4px 6px -2px hsl(var(--navy) / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(var(--navy) / 0.15), 0 10px 10px -5px hsl(var(--navy) / 0.04);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-magnetic: 0 8px 32px hsl(var(--primary) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-magnetic: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 226 71% 8%;
+    --foreground: 217 100% 97%;
+    --navy: 217 100% 97%;
+    --emerald: 168 70% 45%;
+    --gradient-hero: linear-gradient(135deg, hsl(226 71% 8%) 0%, hsl(226 60% 12%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  
+  /* Scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  .animate-glow-pulse {
+    animation: glowPulse 6s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-tilt {
+    transition: var(--transition-spring);
+  }
+  
+  .animate-tilt:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+  }
+  
+  .animate-magnetic {
+    transition: var(--transition-magnetic);
+    cursor: pointer;
+  }
+  
+  .animate-magnetic:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-magnetic);
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Glass effect */
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: hsl(var(--background) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+  
+  /* Counter styles */
+  .counter {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

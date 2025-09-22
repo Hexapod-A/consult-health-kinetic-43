@@ -96,7 +96,7 @@ const Navigation = () => {
               <Button 
                 variant="hero" 
                 size="sm"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => window.open('https://calendly.com/dtengu-conulthealth/30min', '_blank')}
               >
                 Request Demo
               </Button>

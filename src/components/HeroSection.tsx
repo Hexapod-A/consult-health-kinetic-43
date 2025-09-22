@@ -94,7 +94,7 @@ const HeroSection = () => {
             <Button 
               variant="hero" 
               size="xl"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.open('https://calendly.com/dtengu-conulthealth/30min', '_blank')}
               className="group"
             >
               Request a Demo

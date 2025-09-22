@@ -222,7 +222,12 @@ const SolutionsSection = () => {
                   </ul>
 
                   <div className="mt-8">
-                    <Button variant="hero" size="lg" className="w-full">
+                    <Button 
+                      variant="hero" 
+                      size="lg" 
+                      className="w-full"
+                      onClick={() => window.open('https://calendly.com/dtengu-conulthealth/30min', '_blank')}
+                    >
                       Request Demo for {solutions[selectedCard].title}
                     </Button>
                   </div>

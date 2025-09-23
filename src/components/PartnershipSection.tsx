@@ -25,7 +25,7 @@ const PartnershipSection = () => {
               of Healthcare <span className="text-emerald">Together</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Partner with us to revolutionize healthcare delivery through AI-powered digital twins. 
+              Start with a Proof-of-Value pilot tailored to your needs — measure outcomes, then scale. 
               Ready to transform outcomes and reduce costs for your organization?
             </p>
           </div>
@@ -58,46 +58,25 @@ const PartnershipSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Button 
               variant="magnetic" 
               size="xl"
-              onClick={scrollToContact}
+              onClick={() => window.open('https://calendly.com/dtengu-conulthealth/30min', '_blank')}
               className="group min-w-[240px]"
             >
               <Calendar className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
               Schedule a Call
             </Button>
-            
-            <Button 
-              variant="glassmorphic" 
-              size="xl"
-              onClick={scrollToContact}
-              className="group min-w-[240px]"
-            >
-              <Handshake className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-              Partner with Us
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
 
-          {/* Partnership Stats */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in" style={{ animationDelay: '0.9s' }}>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">6-10</div>
-              <div className="text-sm text-muted-foreground">Weeks to Pilot</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-emerald mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Support Available</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-navy mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">HIPAA Compliant</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate mb-2">SOC2</div>
-              <div className="text-sm text-muted-foreground">In Progress</div>
+          {/* Partnership Message */}
+          <div className="mt-20 text-center animate-fade-in" style={{ animationDelay: '0.9s' }}>
+            <div className="glass rounded-2xl p-8 max-w-4xl mx-auto border border-primary/20">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We provide investor-ready compliance frameworks (HIPAA, SOC2-in-progress), a robust product roadmap, 
+                and clinical-grade mockups that allow partners to visualize impact before going live.
+              </p>
             </div>
           </div>
         </div>

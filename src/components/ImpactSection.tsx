@@ -9,39 +9,39 @@ const ImpactSection = () => {
   const metrics = [
     {
       icon: Users,
-      label: "Members Modeled",
-      value: "250K+",
-      description: "Healthcare members with active digital twins"
+      label: "10% reduction in preventable readmissions",
+      value: "$2.3M",
+      description: "Annual savings for mid-sized hospital"
     },
     {
       icon: Activity,
-      label: "Conditions Tracked",
-      value: "50+",
-      description: "Medical conditions monitored and predicted"
+      label: "Readmission penalties avoided",
+      value: "70%",
+      description: "Can be avoided with better performance"
     },
     {
       icon: Database,
-      label: "Data Points Processed",
-      value: "120M+",
-      description: "Healthcare events analyzed and modeled"
+      label: "Members modeled",
+      value: "30MM",
+      description: "From initial 250k member baseline"
     },
     {
       icon: Shield,
-      label: "Interoperability",
-      value: "FHIR/HL7",
-      description: "Full compatibility with healthcare standards"
+      label: "SDoH integration impact",
+      value: "Reduces bias",
+      description: "Improves model recall and equity"
     },
     {
       icon: Users,
-      label: "Accuracy Rate",
-      value: "91%",
-      description: "AI model prediction accuracy achieved"
+      label: "Break-even target",
+      value: "Year 3",
+      description: "With 35+ enterprise customers"
     },
     {
       icon: Activity,
-      label: "Cost Reduction",
-      value: "$15M+",
-      description: "Total healthcare costs saved to date"
+      label: "Shared savings optimization",
+      value: "ACO Focus",
+      description: "Maximizing value-based care outcomes"
     }
   ];
 
@@ -75,7 +75,7 @@ const ImpactSection = () => {
       <div className="relative z-10">
         <div className="text-center mb-12 px-6">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Real <span className="text-emerald-light">Impact</span> Metrics
+            Impact We're <span className="text-emerald-light">Designing For</span>
           </h2>
           <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
             Measurable results driving healthcare transformation across the ecosystem.
@@ -126,27 +126,27 @@ const ImpactSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-4xl font-bold text-emerald-light mb-2">
-                <Counter start={0} end={99} suffix=".9%" />
+                Better
               </div>
-              <div className="text-sm text-primary-foreground/70">System Uptime</div>
+              <div className="text-sm text-primary-foreground/70">Health tracking with consistency</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-emerald-light mb-2">
-                <Counter start={0} end={24} suffix="/7" />
+                Network
               </div>
-              <div className="text-sm text-primary-foreground/70">Monitoring</div>
+              <div className="text-sm text-primary-foreground/70">Optimizations for insurers</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-emerald-light mb-2">
-                <Counter start={0} end={256} suffix="-bit" />
+                Member
               </div>
-              <div className="text-sm text-primary-foreground/70">Encryption</div>
+              <div className="text-sm text-primary-foreground/70">Satisfaction improvements</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-emerald-light mb-2">
-                <Counter start={0} end={100} suffix="%" />
+                Premium
               </div>
-              <div className="text-sm text-primary-foreground/70">HIPAA Compliant</div>
+              <div className="text-sm text-primary-foreground/70">Quality enhancements</div>
             </div>
           </div>
         </div>

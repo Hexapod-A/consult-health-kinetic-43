@@ -8,26 +8,26 @@ const AboutSection = () => {
   const timelineSteps = [
     {
       icon: Building2,
-      title: "The Healthcare Challenge",
-      description: "Rising costs, preventable readmissions, and poor care coordination plague health systems worldwide.",
-      stat: "30% of readmissions are preventable"
+      title: "Healthcare Challenge",
+      description: "Rising costs, preventable readmissions, Excess LOS and poor care coordination plagues our health systems.",
+      stat: "70% of readmissions are preventable"
     },
     {
       icon: Users,
       title: "Our Vision",
-      description: "We believe in shifting healthcare from reactive to predictive, preventive, and personalized care.",
-      stat: "Digital twins for every patient"
+      description: "Our vision is to democratize advanced healthcare analytics - making predictive, equitable insights available to every provider, from rural hospitals to large health systems.",
+      stat: "Virtual twins for every patient"
     },
     {
       icon: TrendingUp,
       title: "Proven Innovation",
-      description: "Leveraging AI and digital twin technology to simulate care paths and predict outcomes.",
+      description: "Leveraging AI and virtual twin technology to simulate care paths and predict outcomes.",
       stat: "91% model accuracy achieved"
     },
     {
       icon: Shield,
       title: "Trusted Expertise",
-      description: "Founded by leaders from Cardinal Health, JPMorgan, HDAI, and Archway Health.",
+      description: "Holistic data integration | Explainable AI | Fairness audits | Patient engagement loops | Focus on underserved markets.",
       stat: "HIPAA compliant & SOC2 ready"
     }
   ];
@@ -64,16 +64,14 @@ const AboutSection = () => {
           <h2 className="text-4xl md:text-6xl font-bold text-navy mb-6">
             About <span className="text-primary">Conult Health</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're on a mission to transform healthcare delivery through intelligent digital twins and predictive analytics.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Our Mission: Empower the entire healthcare ecosystem to deliver smarter, equitable, and preventive care by harnessing data.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary via-emerald to-navy rounded-full mx-auto" />
         </div>
 
         {/* Horizontal Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="hidden md:block absolute top-32 left-0 right-0 h-1 bg-gradient-to-r from-primary via-emerald to-navy rounded-full" />
-          
           {/* Timeline Steps */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
             {timelineSteps.map((step, index) => {
@@ -93,8 +91,6 @@ const AboutSection = () => {
                     <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg animate-tilt">
                       <Icon className="w-8 h-8 text-primary-foreground" />
                     </div>
-                    {/* Timeline Dot */}
-                    <div className="hidden md:block absolute top-24 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg" />
                   </div>
 
                   {/* Content Card */}
@@ -115,34 +111,8 @@ const AboutSection = () => {
         <div className="mt-20 text-center">
           <div className="glass rounded-2xl p-12 max-w-4xl mx-auto border border-primary/20">
             <blockquote className="text-2xl md:text-3xl font-semibold text-navy mb-4 italic">
-              "Empowering health systems to shift from reactive to predictive, preventive, and personalized care."
+              "Our vision is to democratize advanced healthcare analytics - making predictive, equitable insights available to every provider, from rural hospitals to large health systems."
             </blockquote>
-            <div className="flex flex-wrap justify-center gap-8 mt-8">
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Building2 className="w-4 h-4 text-primary" />
-                </div>
-                <span className="text-sm">Cardinal Health</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <div className="w-8 h-8 bg-emerald/10 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="w-4 h-4 text-emerald" />
-                </div>
-                <span className="text-sm">JPMorgan</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <div className="w-8 h-8 bg-navy/10 rounded-lg flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-navy" />
-                </div>
-                <span className="text-sm">HDAI</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <div className="w-8 h-8 bg-slate/10 rounded-lg flex items-center justify-center">
-                  <Users className="w-4 h-4 text-slate" />
-                </div>
-                <span className="text-sm">Archway Health</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

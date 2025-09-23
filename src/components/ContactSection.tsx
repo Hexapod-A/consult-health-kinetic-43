@@ -176,7 +176,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="font-medium text-navy">Email</div>
-                    <div className="text-muted-foreground">contact@conulthealth.com</div>
+                    <div className="text-muted-foreground">info@conulthealth.com</div>
                   </div>
                 </div>
 
@@ -196,7 +196,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="font-medium text-navy">Address</div>
-                    <div className="text-muted-foreground">San Francisco, CA</div>
+                    <div className="text-muted-foreground">Pittsburgh, PA</div>
                   </div>
                 </div>
               </div>
@@ -237,16 +237,16 @@ const ContactSection = () => {
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Average Response Time</span>
-                  <span className="font-semibold text-primary">&lt; 24 hours</span>
+                  <span className="text-muted-foreground">Calendly Link</span>
+                  <a href="https://calendly.com/dtengu-conulthealth/30min" target="_blank" className="font-semibold text-primary hover:underline">Schedule Now</a>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Implementation Time</span>
-                  <span className="font-semibold text-emerald">6-10 weeks</span>
+                  <span className="font-semibold text-emerald">8-10 weeks</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Client Success Rate</span>
-                  <span className="font-semibold text-navy">98.5%</span>
+                  <span className="text-muted-foreground">Response Time</span>
+                  <span className="font-semibold text-navy">&lt; 24 hours</span>
                 </div>
               </div>
             </div>

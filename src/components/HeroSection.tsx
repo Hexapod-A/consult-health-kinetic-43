@@ -54,7 +54,7 @@ const HeroSection = () => {
           {/* Subtitle */}
           <div className="mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              AI-powered virtual simulations to help providers, payers, and health systems identify high-risk patients early, 
+              AI-powered virtual simulations to help ACO's, care teams, providers, payers, and health systems identify high-risk patients early, 
               optimize resources, reduce preventable costs, and improve outcomes.
             </p>
           </div>

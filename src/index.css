@@ -103,8 +103,12 @@ Healthcare-focused, professional, kinetic yet calm
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-white text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  section {
+    @apply rounded-3xl;
   }
   
   h1, h2, h3, h4, h5, h6 {

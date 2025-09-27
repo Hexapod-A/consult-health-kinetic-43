@@ -166,12 +166,13 @@ const SolutionsSection = () => {
           </p>
         </div>
 
-        {/* Section 1: Organizations */}
+        {/* Section 1: Organizations - 3x2 Grid */}
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-navy text-center mb-12">Organizations</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {organizationSolutions.map((solution, index) => {
+          {/* Row 1: Payers, ACOs, Health Systems */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {organizationSolutions.slice(0, 3).map((solution, index) => {
               const Icon = solution.icon;
               const isVisible = visibleCards.includes(index);
               const colorClasses = getColorClasses(solution.color);
@@ -214,21 +215,67 @@ const SolutionsSection = () => {
               );
             })}
           </div>
-        </div>
-
-        {/* Section 2: Individuals */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {individualSolutions.map((solution, index) => {
+          
+          {/* Row 2: Pharmaceuticals, Patients, Clinicians */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Pharmaceuticals */}
+            {(() => {
+              const solution = organizationSolutions[3]; // Pharmaceuticals
               const Icon = solution.icon;
-              const cardIndex = index + organizationSolutions.length;
+              const index = 3;
+              const isVisible = visibleCards.includes(index);
+              const colorClasses = getColorClasses(solution.color);
+              
+              return (
+                <div
+                  key={index}
+                  data-card={index}
+                  className={`solution-card group perspective-1000 transition-all duration-700 delay-${index * 200} ${
+                    isVisible ? 'animate-scale-in opacity-100' : 'opacity-0 scale-95'
+                  }`}
+                >
+                  <div className={`
+                    relative p-8 rounded-2xl border-2 transition-all duration-300 cursor-pointer preserve-3d
+                    ${colorClasses.bg} ${colorClasses.border}
+                    hover:shadow-xl hover:-translate-y-2 animate-tilt
+                    ${selectedCard === index ? 'shadow-2xl -translate-y-2' : ''}
+                  `}>
+                    {/* Icon */}
+                    <div className={`w-16 h-16 ${colorClasses.iconBg} rounded-2xl flex items-center justify-center mb-6 animate-float`}>
+                      <Icon className={`w-8 h-8 ${colorClasses.icon}`} />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-navy mb-2">{solution.title}</h3>
+                    <h4 className={`text-lg font-semibold ${colorClasses.icon} mb-4`}>{solution.subtitle}</h4>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{solution.description}</p>
+
+                    {/* CTA */}
+                    <Button
+                      variant="outline"
+                      onClick={() => setSelectedCard(selectedCard === index ? null : index)}
+                      className="w-full group-hover:shadow-md transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 mr-2" />
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              );
+            })()}
+            
+            {/* Patients */}
+            {(() => {
+              const solution = individualSolutions[0]; // Patients
+              const Icon = solution.icon;
+              const cardIndex = organizationSolutions.length; // 4
               const isVisible = visibleCards.includes(cardIndex);
               
               return (
                 <div
                   key={cardIndex}
                   data-card={cardIndex}
-                  className={`solution-card group perspective-1000 transition-all duration-700 delay-${index * 200} ${
+                  className={`solution-card group perspective-1000 transition-all duration-700 delay-${cardIndex * 200} ${
                     isVisible ? 'animate-scale-in opacity-100' : 'opacity-0 scale-95'
                   }`}
                 >
@@ -239,8 +286,9 @@ const SolutionsSection = () => {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-2xl font-bold text-navy mb-4">{solution.title}</h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">{solution.description}</p>
+                    <h3 className="text-2xl font-bold text-navy mb-2">For Patients</h3>
+                    <h4 className="text-lg font-semibold text-primary mb-4">Personalized Health Insights</h4>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">Empower patients with personalized risk scores, actionable health alerts, and educational resources to take control of their health journey.</p>
 
                     {/* CTA */}
                     <Button
@@ -254,7 +302,47 @@ const SolutionsSection = () => {
                   </div>
                 </div>
               );
-            })}
+            })()}
+            
+            {/* Clinicians */}
+            {(() => {
+              const solution = individualSolutions[1]; // Clinicians
+              const Icon = solution.icon;
+              const cardIndex = organizationSolutions.length + 1; // 5
+              const isVisible = visibleCards.includes(cardIndex);
+              
+              return (
+                <div
+                  key={cardIndex}
+                  data-card={cardIndex}
+                  className={`solution-card group perspective-1000 transition-all duration-700 delay-${cardIndex * 200} ${
+                    isVisible ? 'animate-scale-in opacity-100' : 'opacity-0 scale-95'
+                  }`}
+                >
+                  <div className="relative p-8 rounded-2xl border-2 bg-background/50 border-border/20 transition-all duration-300 cursor-pointer preserve-3d hover:shadow-xl hover:-translate-y-2 animate-tilt">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-emerald/10 rounded-2xl flex items-center justify-center mb-6 animate-float">
+                      <Icon className="w-8 h-8 text-emerald" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-navy mb-2">For Clinicians</h3>
+                    <h4 className="text-lg font-semibold text-emerald mb-4">Clinical Decision Support</h4>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">Support clinical decision-making with simulated care pathways, outcome predictions, and evidence-based treatment recommendations.</p>
+
+                    {/* CTA */}
+                    <Button
+                      variant="outline"
+                      onClick={() => setSelectedCard(selectedCard === cardIndex ? null : cardIndex)}
+                      className="w-full group-hover:shadow-md transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 mr-2" />
+                      Learn More
+                    </Button>
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         </div>
       </div>

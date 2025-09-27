@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import conultLogo from '@/assets/conult-logo.png';
 
 const Navigation = () => {
@@ -82,6 +83,18 @@ const Navigation = () => {
                   {section.label}
                 </button>
               ))}
+              <Link 
+                to="/teams" 
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                Teams
+              </Link>
+              <Link 
+                to="/blog" 
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                Blog
+              </Link>
             </div>
 
             {/* CTA Buttons */}

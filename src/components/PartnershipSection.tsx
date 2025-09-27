@@ -70,15 +70,6 @@ const PartnershipSection = () => {
             </Button>
           </div>
 
-          {/* Partnership Message */}
-          <div className="mt-20 text-center animate-fade-in" style={{ animationDelay: '0.9s' }}>
-            <div className="glass rounded-2xl p-8 max-w-4xl mx-auto border border-primary/20">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We provide investor-ready compliance frameworks (HIPAA, SOC2-in-progress), a robust product roadmap, 
-                and clinical-grade mockups that allow partners to visualize impact before going live.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
